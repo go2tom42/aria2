@@ -107,7 +107,7 @@ RUN tar xf libssh2-1.8.0.tar.gz && \
     make install
 ADD https://api.github.com/repos/aria2/aria2/git/refs/heads/master version.json
 RUN git clone https://github.com/aria2/aria2 && \
-    sed -i "s/1, 16/1, 32/g" aria2/src/OptionHandlerFactory.cc && \
+    sed -i "s/1, 16/1, 32/g" ./aria2/src/OptionHandlerFactory.cc && \
     cd aria2 && autoreconf -i && ./mingw-config && make && \
     $HOST-strip src/aria2c.exe
     
